@@ -95,7 +95,8 @@
         "fileName": ".templates\\SendMailSmtpAlertBasedOnTxt.xaml"
       }
     ],
-    "saveToCloud": false
+    "saveToCloud": false,
+    "cloudProjectUrl": "https://cloud.uipath.com:443/alexapsvjuul/studio_/designer/a4825277-7688-44d5-bb43-72e1e879d800"
   },
   "expressionLanguage": "VisualBasic",
   "entryPoints": [
@@ -107,7 +108,10 @@
     }
   ],
   "isTemplate": true,
-  "templateProjectData": {},
+  "templateProjectData": {
+    "defaultProjectDescription": "Smarthis' Robotic Enterprise Framework version of the Performer structure.",
+    "defaultProjectName": "SmarthisTemplatePerformer"
+  },
   "publishData": {},
   "targetFramework": "Windows"
 }
