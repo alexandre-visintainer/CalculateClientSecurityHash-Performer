@@ -150,7 +150,7 @@
               <av:PointCollection x:Key="ConnectorLocation">65,541.6 65,571.6 165,571.6 165,715.6</av:PointCollection>
             </scg:Dictionary>
           </sap:WorkflowViewStateService.ViewState>
-          <Sequence sap2010:Annotation.AnnotationText="If the transaction item is processed without any exception, its status is updated as Successful." DisplayName="Success" sap:VirtualizedContainerService.HintSize="483.20000000000005,1549.6" sap2010:WorkflowViewState.IdRef="Sequence_11">
+          <Sequence sap2010:Annotation.AnnotationText="If the transaction item is processed without any exception, its status is updated as Successful." DisplayName="Success" sap:VirtualizedContainerService.HintSize="518.4,1711.2" sap2010:WorkflowViewState.IdRef="Sequence_11">
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <x:Boolean x:Key="IsExpanded">False</x:Boolean>
@@ -158,7 +158,7 @@
                 <x:Boolean x:Key="IsPinned">False</x:Boolean>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
-            <TryCatch DisplayName="Try Catch Set Transaction Status (Success)" sap:VirtualizedContainerService.HintSize="449.6,761.6" sap2010:WorkflowViewState.IdRef="TryCatch_11">
+            <TryCatch DisplayName="Try Catch Set Transaction Status (Success)" sap:VirtualizedContainerService.HintSize="484.8,761.6" sap2010:WorkflowViewState.IdRef="TryCatch_11">
               <TryCatch.Try>
                 <ui:SetTransactionStatus ContinueOnError="{x:Null}" Reason="{x:Null}" ServiceBaseAddress="{x:Null}" DisplayName="Set transaction status (Successful)" ErrorType="Application" FolderPath="[in_Config(&quot;processQueueFolder&quot;).ToString]" sap:VirtualizedContainerService.HintSize="416,193.6" sap2010:WorkflowViewState.IdRef="SetTransactionStatus_4" Status="Successful" TimeoutMS="[Cint(in_config(&quot;timeoutOrchestratorInteractions&quot;))]" TransactionItem="[in_transactionItem]">
                   <ui:SetTransactionStatus.Analytics>
@@ -207,7 +207,7 @@
                 </Sequence>
               </TryCatch.Finally>
             </TryCatch>
-            <Sequence sap2010:Annotation.AnnotationText="Includes custom log fields to the log message.&#xA;They are removed after logging to prevent duplicated status messages about a single transaction." DisplayName="Log Success with additional logging fields" sap:VirtualizedContainerService.HintSize="449.6,560.8" sap2010:WorkflowViewState.IdRef="Sequence_10">
+            <Sequence sap2010:Annotation.AnnotationText="Includes custom log fields to the log message.&#xA;They are removed after logging to prevent duplicated status messages about a single transaction." DisplayName="Log Success with additional logging fields" sap:VirtualizedContainerService.HintSize="484.8,560.8" sap2010:WorkflowViewState.IdRef="Sequence_10">
               <sap:WorkflowViewStateService.ViewState>
                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
                   <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -234,14 +234,25 @@
                 </ui:RemoveLogFields.Fields>
               </ui:RemoveLogFields>
             </Sequence>
-            <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Invoke UpdateReport workflow - Success" sap:VirtualizedContainerService.HintSize="449.6,167.2" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_6" UnSafe="False" WorkflowFileName="02-Framework\UpdateReport.xaml">
-              <ui:InvokeWorkflowFile.Arguments>
-                <InOutArgument x:TypeArguments="sd:DataTable" x:Key="io_dtReport">[io_dtReport]</InOutArgument>
-                <InArgument x:TypeArguments="s:Exception" x:Key="in_exception">[Nothing]</InArgument>
-                <InArgument x:TypeArguments="ui:QueueItem" x:Key="in_transactionItem">[in_transactionItem]</InArgument>
-                <InArgument x:TypeArguments="x:String" x:Key="in_screenshotFilePath" />
-              </ui:InvokeWorkflowFile.Arguments>
-            </ui:InvokeWorkflowFile>
+            <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="484.8,328.8" sap2010:WorkflowViewState.IdRef="CommentOut_1">
+              <ui:CommentOut.Body>
+                <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="449.6,227.2" sap2010:WorkflowViewState.IdRef="Sequence_30">
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                  <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Invoke UpdateReport workflow - Success" sap:VirtualizedContainerService.HintSize="416,167.2" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_6" UnSafe="False" WorkflowFileName="02-Framework\UpdateReport.xaml">
+                    <ui:InvokeWorkflowFile.Arguments>
+                      <InOutArgument x:TypeArguments="sd:DataTable" x:Key="io_dtReport">[io_dtReport]</InOutArgument>
+                      <InArgument x:TypeArguments="s:Exception" x:Key="in_exception">[Nothing]</InArgument>
+                      <InArgument x:TypeArguments="ui:QueueItem" x:Key="in_transactionItem">[in_transactionItem]</InArgument>
+                      <InArgument x:TypeArguments="x:String" x:Key="in_screenshotFilePath" />
+                    </ui:InvokeWorkflowFile.Arguments>
+                  </ui:InvokeWorkflowFile>
+                </Sequence>
+              </ui:CommentOut.Body>
+            </ui:CommentOut>
           </Sequence>
           <FlowStep.Next>
             <FlowStep x:Name="__ReferenceID0" sap2010:WorkflowViewState.IdRef="FlowStep_4">

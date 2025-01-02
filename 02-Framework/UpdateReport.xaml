@@ -106,7 +106,7 @@
     </sap:WorkflowViewStateService.ViewState>
     <ui:LogMessage DisplayName="Log Message - start" sap:VirtualizedContainerService.HintSize="416,174.4" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Info" Message="[&quot;Updating report collection...&quot;]" />
     <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="416,174.4" sap2010:WorkflowViewState.IdRef="LogMessage_2" Level="Info" Message="[in_transactionItem]" />
-    <ui:FilterDataTable sap2010:Annotation.AnnotationText="Add all necessary data in filter criteria to ensure proper identification of transaction." DataTable="[io_dtReport]" DisplayName="Delete rows related to transaction to avoid duplicates" FilterRowsMode="Remove" sap:VirtualizedContainerService.HintSize="416,238.4" sap2010:WorkflowViewState.IdRef="FilterDataTable_2" OutputDataTable="[io_dtReport]" SelectColumnsMode="Keep">
+    <ui:FilterDataTable sap2010:Annotation.AnnotationText="Add all necessary data in filter criteria to ensure proper identification of transaction." DataTable="[io_dtReport]" DisplayName="Delete rows related to transaction to avoid duplicates" FilterRowsMode="Keep" sap:VirtualizedContainerService.HintSize="416,238.4" sap2010:WorkflowViewState.IdRef="FilterDataTable_2" OutputDataTable="[io_dtReport]" SelectColumnsMode="Keep">
       <ui:FilterDataTable.Filters>
         <scg:List x:TypeArguments="ui:FilterOperationArgument" Capacity="4">
           <ui:FilterOperationArgument BooleanOperator="And" Operator="EQ">

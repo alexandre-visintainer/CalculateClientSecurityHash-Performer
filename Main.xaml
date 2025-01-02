@@ -424,15 +424,15 @@
                     </scg:Dictionary>
                   </sap:WorkflowViewStateService.ViewState>
                   <Transition.To>
-                    <State x:Name="__ReferenceID2" sap2010:Annotation.AnnotationText="-&gt; Report the process execution status to the business users and COE members." DisplayName="Report" sap:VirtualizedContainerService.HintSize="149.6,152" sap2010:WorkflowViewState.IdRef="State_6">
+                    <State x:Name="__ReferenceID2" sap2010:Annotation.AnnotationText="-&gt; Report the process execution status to the business users and COE members." DisplayName="Report" sap:VirtualizedContainerService.HintSize="530.4,1899.2" sap2010:WorkflowViewState.IdRef="State_6">
                       <State.Entry>
-                        <Sequence DisplayName="Report sequence" sap:VirtualizedContainerService.HintSize="485.6,1624" sap2010:WorkflowViewState.IdRef="Sequence_13">
+                        <Sequence DisplayName="Report sequence" sap:VirtualizedContainerService.HintSize="485.6,1506.4" sap2010:WorkflowViewState.IdRef="Sequence_13">
                           <sap:WorkflowViewStateService.ViewState>
                             <scg:Dictionary x:TypeArguments="x:String, x:Object">
                               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                             </scg:Dictionary>
                           </sap:WorkflowViewStateService.ViewState>
-                          <TryCatch DisplayName="T/C - Send report to alert automation interruption" sap:VirtualizedContainerService.HintSize="452,915.2" sap2010:WorkflowViewState.IdRef="TryCatch_17">
+                          <TryCatch DisplayName="T/C - Send report to alert automation interruption" sap:VirtualizedContainerService.HintSize="452,797.6" sap2010:WorkflowViewState.IdRef="TryCatch_17">
                             <sap:WorkflowViewStateService.ViewState>
                               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -440,7 +440,7 @@
                               </scg:Dictionary>
                             </sap:WorkflowViewStateService.ViewState>
                             <TryCatch.Try>
-                              <If Condition="[fatalError IsNot Nothing]" DisplayName="Send report to alert automation interruption" sap:VirtualizedContainerService.HintSize="433.6,548" sap2010:WorkflowViewState.IdRef="If_12">
+                              <If Condition="[fatalError IsNot Nothing]" DisplayName="Send report to alert automation interruption" sap:VirtualizedContainerService.HintSize="433.6,430.4" sap2010:WorkflowViewState.IdRef="If_12">
                                 <sap:WorkflowViewStateService.ViewState>
                                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                     <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -448,14 +448,31 @@
                                   </scg:Dictionary>
                                 </sap:WorkflowViewStateService.ViewState>
                                 <If.Then>
-                                  <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="416,352" sap2010:WorkflowViewState.IdRef="Sequence_29">
+                                  <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="416,234.4" sap2010:WorkflowViewState.IdRef="Sequence_29">
                                     <sap:WorkflowViewStateService.ViewState>
                                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                         <x:Boolean x:Key="IsPinned">False</x:Boolean>
                                       </scg:Dictionary>
                                     </sap:WorkflowViewStateService.ViewState>
-                                    <ui:LogMessage DisplayName="Log Message | Alert automation interruption " sap:VirtualizedContainerService.HintSize="382.4,174.4" sap2010:WorkflowViewState.IdRef="LogMessage_22" Level="Fatal" Message="[$&quot;Process interrupted with fatal error. State machine where the error occured: {fatalError.Data(&quot;StateMachine&quot;).ToString}&quot;]" />
+                                    <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="382.4,56.8" sap2010:WorkflowViewState.IdRef="CommentOut_1">
+                                      <ui:CommentOut.Body>
+                                        <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="449.6,225.6" sap2010:WorkflowViewState.IdRef="Sequence_37">
+                                          <sap:WorkflowViewStateService.ViewState>
+                                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                            </scg:Dictionary>
+                                          </sap:WorkflowViewStateService.ViewState>
+                                          <ui:LogMessage DisplayName="Log Message | Alert automation interruption " sap:VirtualizedContainerService.HintSize="416,165.6" sap2010:WorkflowViewState.IdRef="LogMessage_22" Level="Fatal" Message="[$&quot;Process interrupted with fatal error. State machine where the error occured: {fatalError.Data(&quot;StateMachine&quot;).ToString}&quot;]" />
+                                        </Sequence>
+                                      </ui:CommentOut.Body>
+                                      <sap:WorkflowViewStateService.ViewState>
+                                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                          <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                                          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                        </scg:Dictionary>
+                                      </sap:WorkflowViewStateService.ViewState>
+                                    </ui:CommentOut>
                                     <ui:Comment DisplayName="Comment - send report to alert automation interruption" sap:VirtualizedContainerService.HintSize="382.4,117.6" sap2010:WorkflowViewState.IdRef="Comment_6" Text="// It is necessary to insert here the workflow responsible for the alert in case of automation interruption" />
                                   </Sequence>
                                 </If.Then>
@@ -646,7 +663,7 @@
                   </sap:WorkflowViewStateService.ViewState>
                   <Transition.Condition>[fatalError Is Nothing AndAlso inputFilesDownloaded]</Transition.Condition>
                   <Transition.To>
-                    <State x:Name="__ReferenceID1" sap2010:Annotation.AnnotationText="-&gt; Get the next transaction item that needs to be processed. " DisplayName="Get Next Transaction Item" sap:VirtualizedContainerService.HintSize="524.8,1522.4" sap2010:WorkflowViewState.IdRef="State_3">
+                    <State x:Name="__ReferenceID1" sap2010:Annotation.AnnotationText="-&gt; Get the next transaction item that needs to be processed. " DisplayName="Get Next Transaction Item" sap:VirtualizedContainerService.HintSize="157.6,136" sap2010:WorkflowViewState.IdRef="State_3">
                       <State.Entry>
                         <TryCatch DisplayName="Try to get transaction item" sap:VirtualizedContainerService.HintSize="480,1075.2" sap2010:WorkflowViewState.IdRef="TryCatch_4">
                           <TryCatch.Try>
