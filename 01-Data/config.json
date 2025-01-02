@@ -9,6 +9,8 @@
         "localBucketDir":"",
         "exScreenshotsFolderPath":"",
         "businessProcessName":"",
+		"acmeUrl":"https://acme-test.uipath.com/",
+		"sha1Url":"http://www.sha1-online.com/",
         "assets":{
             "example1":{
            
@@ -18,8 +20,9 @@
             }
         },
         "credentials":{
-            "example3":{
-          
+            "AcmeCredential":{
+                "name":"Acme1Credentials",
+                "orchestratorFolder":"Shared"
             }
         }
     }

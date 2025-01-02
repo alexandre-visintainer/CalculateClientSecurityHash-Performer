@@ -97,15 +97,15 @@
       <AssemblyReference>System.Private.Uri</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="GetQueueMaxRetryNumber" sap:VirtualizedContainerService.HintSize="598,717" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="GetQueueMaxRetryNumber" sap:VirtualizedContainerService.HintSize="1119.2,1536.8" sap2010:WorkflowViewState.IdRef="Sequence_5">
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <TryCatch DisplayName="Try Catch - get response and set out_maxRetryNumber" sap:VirtualizedContainerService.HintSize="536,606" sap2010:WorkflowViewState.IdRef="TryCatch_1">
+    <TryCatch DisplayName="Try Catch - get response and set out_maxRetryNumber" sap:VirtualizedContainerService.HintSize="470.4,1513.6" sap2010:WorkflowViewState.IdRef="TryCatch_1">
       <TryCatch.Try>
-        <Sequence DisplayName="Get response and set out_maxRetryNumberQueue" sap:VirtualizedContainerService.HintSize="530,969" sap2010:WorkflowViewState.IdRef="Sequence_3">
+        <Sequence DisplayName="Get response and set out_maxRetryNumberQueue" sap:VirtualizedContainerService.HintSize="468.8,920" sap2010:WorkflowViewState.IdRef="Sequence_3">
           <Sequence.Variables>
             <Variable x:TypeArguments="x:String" Name="responseQueueDefs" />
             <Variable x:TypeArguments="njl:JObject" Name="jsonResponseQueueDefs" />
@@ -116,7 +116,7 @@
               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
             </scg:Dictionary>
           </sap:WorkflowViewStateService.ViewState>
-          <Assign DisplayName="Assign - endpoint" sap:VirtualizedContainerService.HintSize="468,82" sap2010:WorkflowViewState.IdRef="Assign_7">
+          <Assign DisplayName="Assign - endpoint" sap:VirtualizedContainerService.HintSize="435.2,113.6" sap2010:WorkflowViewState.IdRef="Assign_7">
             <Assign.To>
               <OutArgument x:TypeArguments="x:String">[relativeEndpointQueueDefs]</OutArgument>
             </Assign.To>
@@ -124,8 +124,8 @@
               <InArgument x:TypeArguments="x:String">[String.Format("/odata/QueueDefinitions?$filter=Name eq '{0}'", in_QueueName)]</InArgument>
             </Assign.Value>
           </Assign>
-          <ui:OrchestratorHttpRequest JSONPayload="{x:Null}" ResponseHeaders="{x:Null}" StatusCode="{x:Null}" DisplayName="Orchestrator HTTP Request (Queues - Get All)" FolderPath="[in_queueFolder]" sap:VirtualizedContainerService.HintSize="468,242" sap2010:WorkflowViewState.IdRef="OrchestratorHttpRequest_2" Method="GET" RelativeEndpoint="[relativeEndpointQueueDefs]" Result="[responseQueueDefs]" TimeoutMS="[in_timeoutOrchestratorInteractions]" />
-          <ui:DeserializeJson x:TypeArguments="njl:JObject" DisplayName="Deserialize JSON (Queues - Get All)" sap:VirtualizedContainerService.HintSize="468,60" sap2010:WorkflowViewState.IdRef="DeserializeJson`1_2" JsonObject="[jsonResponseQueueDefs]" JsonString="[responseQueueDefs]">
+          <ui:OrchestratorHttpRequest JSONPayload="{x:Null}" ResponseHeaders="{x:Null}" StatusCode="{x:Null}" DisplayName="Orchestrator HTTP Request (Queues - Get All)" FolderPath="[in_queueFolder]" sap:VirtualizedContainerService.HintSize="435.2,277.6" sap2010:WorkflowViewState.IdRef="OrchestratorHttpRequest_2" Method="GET" RelativeEndpoint="[relativeEndpointQueueDefs]" Result="[responseQueueDefs]" TimeoutMS="[in_timeoutOrchestratorInteractions]" />
+          <ui:DeserializeJson x:TypeArguments="njl:JObject" JsonSample="{x:Null}" DisplayName="Deserialize JSON (Queues - Get All)" sap:VirtualizedContainerService.HintSize="435.2,122.4" sap2010:WorkflowViewState.IdRef="DeserializeJson`1_2" JsonObject="[jsonResponseQueueDefs]" JsonString="[responseQueueDefs]">
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -133,7 +133,7 @@
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
           </ui:DeserializeJson>
-          <If Condition="[jsonResponseQueueDefs.SelectToken(&quot;$.value[0]&quot;) IsNot Nothing]" DisplayName="If - Queue returned is not null" sap:VirtualizedContainerService.HintSize="468,354" sap2010:WorkflowViewState.IdRef="If_2">
+          <If Condition="[jsonResponseQueueDefs.SelectToken(&quot;$.value[0]&quot;) IsNot Nothing]" DisplayName="If - Queue returned is not null" sap:VirtualizedContainerService.HintSize="435.2,346.4" sap2010:WorkflowViewState.IdRef="If_2">
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -141,7 +141,7 @@
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
             <If.Then>
-              <Assign DisplayName="Assign (out_MaxRetryNumber)" sap:VirtualizedContainerService.HintSize="434,82" sap2010:WorkflowViewState.IdRef="Assign_8">
+              <Assign DisplayName="Assign (out_MaxRetryNumber)" sap:VirtualizedContainerService.HintSize="433.6,81.6" sap2010:WorkflowViewState.IdRef="Assign_8">
                 <Assign.To>
                   <OutArgument x:TypeArguments="x:Int32">[out_maxRetryNumberQueue]</OutArgument>
                 </Assign.To>
@@ -151,7 +151,7 @@
               </Assign>
             </If.Then>
             <If.Else>
-              <Throw DisplayName="Throw BRE: could not get queue definitions" Exception="[New BusinessRuleException(String.Format(&quot;Queue Name '{0}' did not return any queue from orchestrator.&quot;, in_queueName))]" sap:VirtualizedContainerService.HintSize="334,90" sap2010:WorkflowViewState.IdRef="Throw_3" />
+              <Throw DisplayName="Throw BRE: could not get queue definitions" Exception="[New BusinessRuleException(String.Format(&quot;Queue Name '{0}' did not return any queue from orchestrator.&quot;, in_queueName))]" sap:VirtualizedContainerService.HintSize="433.6,90.4" sap2010:WorkflowViewState.IdRef="Throw_3" />
             </If.Else>
           </If>
         </Sequence>
@@ -168,13 +168,13 @@
             <ActivityAction.Argument>
               <DelegateInArgument x:TypeArguments="s:Exception" Name="exception" />
             </ActivityAction.Argument>
-            <Sequence DisplayName="Set default and log exception - catch" sap:VirtualizedContainerService.HintSize="496,374" sap2010:WorkflowViewState.IdRef="Sequence_4">
+            <Sequence DisplayName="Set default and log exception - catch" sap:VirtualizedContainerService.HintSize="468.8,339.2" sap2010:WorkflowViewState.IdRef="Sequence_4">
               <sap:WorkflowViewStateService.ViewState>
                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
                   <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
-              <Assign DisplayName="Assign (default out_MaxRetryNumber)" sap:VirtualizedContainerService.HintSize="434,82" sap2010:WorkflowViewState.IdRef="Assign_9">
+              <Assign DisplayName="Assign (default out_MaxRetryNumber)" sap:VirtualizedContainerService.HintSize="435.2,113.6" sap2010:WorkflowViewState.IdRef="Assign_9">
                 <Assign.To>
                   <OutArgument x:TypeArguments="x:Int32">[out_maxRetryNumberQueue]</OutArgument>
                 </Assign.To>
@@ -182,11 +182,20 @@
                   <InArgument x:TypeArguments="x:Int32">0</InArgument>
                 </Assign.Value>
               </Assign>
-              <ui:LogMessage DisplayName="Log Message - exception message" sap:VirtualizedContainerService.HintSize="434,141" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Warn" Message="[String.Format(&quot;Error getting Queue MaxRetryNumber. Value set to 0. | Error message: {0}&quot;, exception.Message)]" />
+              <ui:LogMessage DisplayName="Log Message - exception message" sap:VirtualizedContainerService.HintSize="435.2,165.6" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Warn" Message="[String.Format(&quot;Error getting Queue MaxRetryNumber. Value set to 0. | Error message: {0}&quot;, exception.Message)]" />
             </Sequence>
           </ActivityAction>
         </Catch>
       </TryCatch.Catches>
+      <TryCatch.Finally>
+        <Sequence DisplayName="Finally" sap:VirtualizedContainerService.HintSize="468.8,89.6" sap2010:WorkflowViewState.IdRef="Sequence_1">
+          <sap:WorkflowViewStateService.ViewState>
+            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+            </scg:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
+        </Sequence>
+      </TryCatch.Finally>
     </TryCatch>
   </Sequence>
 </Activity>

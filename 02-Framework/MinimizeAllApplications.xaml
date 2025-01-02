@@ -77,14 +77,14 @@
       <AssemblyReference>System.Reflection.Metadata</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="MinimizeAllApplications" sap:VirtualizedContainerService.HintSize="496,665" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="MinimizeAllApplications" sap:VirtualizedContainerService.HintSize="1119.2,696.8" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <ui:LogMessage DisplayName="Log Minimize All Applications" sap:VirtualizedContainerService.HintSize="434,141" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="[UiPath.Core.Activities.LogLevel.Info]" Message="[&quot;Minimizing all applications ...&quot;]" />
-    <TryCatch DisplayName="T/C - Minimize All Applications" sap:VirtualizedContainerService.HintSize="434,373" sap2010:WorkflowViewState.IdRef="TryCatch_1">
+    <ui:LogMessage DisplayName="Log Minimize All Applications" sap:VirtualizedContainerService.HintSize="417.6,174.4" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="[UiPath.Core.Activities.LogLevel.Info]" Message="[&quot;Minimizing all applications ...&quot;]" />
+    <TryCatch DisplayName="T/C - Minimize All Applications" sap:VirtualizedContainerService.HintSize="417.6,499.2" sap2010:WorkflowViewState.IdRef="TryCatch_1">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
           <x:Boolean x:Key="IsPinned">False</x:Boolean>
@@ -92,7 +92,7 @@
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
       <TryCatch.Try>
-        <ui:InvokePowerShell x:TypeArguments="sma:PSObject" ContinueOnError="{x:Null}" CommandText="(New-Object -ComObject Shell.Application).MinimizeAll()" DisplayName="Invoke Power Shell To Minimize All Applications" sap:VirtualizedContainerService.HintSize="334,79" sap2010:WorkflowViewState.IdRef="InvokePowerShell`1_1" IsScript="True" PowerShellProcess="PowerShellCore">
+        <ui:InvokePowerShell x:TypeArguments="sma:PSObject" ContinueOnError="{x:Null}" CommandText="(New-Object -ComObject Shell.Application).MinimizeAll()" DisplayName="Invoke Power Shell To Minimize All Applications" sap:VirtualizedContainerService.HintSize="416,80" sap2010:WorkflowViewState.IdRef="InvokePowerShell`1_1" IsScript="True" PowerShellProcess="PowerShellCore">
           <ui:InvokePowerShell.Parameters>
             <scg:Dictionary x:TypeArguments="x:String, InArgument" />
           </ui:InvokePowerShell.Parameters>
@@ -118,7 +118,7 @@
             <ActivityAction.Argument>
               <DelegateInArgument x:TypeArguments="s:Exception" Name="exception" />
             </ActivityAction.Argument>
-            <ui:LogMessage DisplayName="Log Error to Minimize All Applications" sap:VirtualizedContainerService.HintSize="334,141" sap2010:WorkflowViewState.IdRef="LogMessage_2" Level="[UiPath.Core.Activities.LogLevel.Warn]" Message="[String.Format(&#xA;&#x9;&quot;Error to minimize all applications using Windows Powershell: {0}&quot;,&#xA;&#x9;exception.Message&#xA;)]">
+            <ui:LogMessage DisplayName="Log Error to Minimize All Applications" sap:VirtualizedContainerService.HintSize="416,142.4" sap2010:WorkflowViewState.IdRef="LogMessage_2" Level="[UiPath.Core.Activities.LogLevel.Warn]" Message="[String.Format(&#xA;&#x9;&quot;Error to minimize all applications using Windows Powershell: {0}&quot;,&#xA;&#x9;exception.Message&#xA;)]">
               <sap:WorkflowViewStateService.ViewState>
                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
                   <x:Boolean x:Key="IsPinned">False</x:Boolean>
@@ -128,6 +128,15 @@
           </ActivityAction>
         </Catch>
       </TryCatch.Catches>
+      <TryCatch.Finally>
+        <Sequence DisplayName="Finally" sap:VirtualizedContainerService.HintSize="416,89.6" sap2010:WorkflowViewState.IdRef="Sequence_2">
+          <sap:WorkflowViewStateService.ViewState>
+            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+            </scg:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
+        </Sequence>
+      </TryCatch.Finally>
     </TryCatch>
   </Sequence>
 </Activity>
