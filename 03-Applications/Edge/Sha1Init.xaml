@@ -98,13 +98,13 @@
       <AssemblyReference>System.Linq.Expressions</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="Sha1Init" sap:VirtualizedContainerService.HintSize="1136,609.24" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="Sha1Init" sap:VirtualizedContainerService.HintSize="1110.4,609.24" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <uix:NApplicationCard AttachMode="ByInstance" DisplayName="Use Browser Edge: SHA1 online" sap:VirtualizedContainerService.HintSize="483.2,331.2" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" InteractionMode="DebuggerApi" ScopeGuid="d13628af-37f6-4510-b842-cc5da9b78a86" Version="V2">
+    <uix:NApplicationCard AttachMode="ByInstance" CloseMode="Never" DisplayName="Use Browser Edge: SHA1 online" sap:VirtualizedContainerService.HintSize="483.2,331.2" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" InteractionMode="DebuggerApi" OpenMode="Always" ScopeGuid="d13628af-37f6-4510-b842-cc5da9b78a86" Version="V2">
       <uix:NApplicationCard.Body>
         <ActivityAction x:TypeArguments="x:Object">
           <ActivityAction.Argument>

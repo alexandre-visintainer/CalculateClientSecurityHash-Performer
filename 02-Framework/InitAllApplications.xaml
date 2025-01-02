@@ -39,6 +39,7 @@
       <x:String>GlobalVariablesNamespace</x:String>
       <x:String>GlobalConstantsNamespace</x:String>
       <x:String>System.Linq.Expressions</x:String>
+      <x:String>System.Numerics</x:String>
     </scg:List>
   </TextExpression.NamespacesForImplementation>
   <TextExpression.ReferencesForImplementation>
@@ -96,6 +97,7 @@
       <AssemblyReference>System.Linq.Async</AssemblyReference>
       <AssemblyReference>System.Collections.NonGeneric</AssemblyReference>
       <AssemblyReference>System.Linq.Expressions</AssemblyReference>
+      <AssemblyReference>System.Runtime.Numerics</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
   <sap:WorkflowViewStateService.ViewState>
@@ -124,7 +126,7 @@
         <InArgument x:TypeArguments="x:String" x:Key="in_username" />
         <InArgument x:TypeArguments="ss:SecureString" x:Key="in_password" />
         <InArgument x:TypeArguments="x:Int32" x:Key="in_timeoutMs" />
-        <InArgument x:TypeArguments="x:Int32" x:Key="in_maxRetryNumber" />
+        <InArgument x:TypeArguments="x:Int32" x:Key="in_maxRetryNumber">[DirectCast( in_config("maxRetryNumberInitApplications"),System.Int32)]</InArgument>
         <InArgument x:TypeArguments="x:String" x:Key="in_screenshotFolderPath" />
         <InArgument x:TypeArguments="x:String" x:Key="in_AcmeUrl">[DirectCast( in_config("acmeUrl"),System.String)]</InArgument>
         <InArgument x:TypeArguments="x:String" x:Key="in_sha1Url">[DirectCast( in_config("sha1Url"),System.String)]</InArgument>
@@ -142,7 +144,7 @@
         <InArgument x:TypeArguments="ss:SecureString" x:Key="in_password" />
         <InArgument x:TypeArguments="x:String" x:Key="in_applicationUrl" />
         <InArgument x:TypeArguments="x:Int32" x:Key="in_timeoutMs" />
-        <InArgument x:TypeArguments="x:Int32" x:Key="in_maxRetryNumber" />
+        <InArgument x:TypeArguments="x:Int32" x:Key="in_maxRetryNumber">[DirectCast( in_config("maxRetryNumberInitApplications"),System.Int32)]</InArgument>
         <InArgument x:TypeArguments="x:String" x:Key="in_screenshotFolderPath" />
         <InArgument x:TypeArguments="x:String" x:Key="in_sha1Url">[DirectCast( in_config("sha1Url"),System.String)]</InArgument>
       </ui:InvokeWorkflowFile.Arguments>
